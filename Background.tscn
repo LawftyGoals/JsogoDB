@@ -1,0 +1,101 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/MainBody.cs" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+[node name="Background" type="Node2D"]
+
+[node name="TopPanel" type="Panel" parent="."]
+margin_right = 1920.0
+margin_bottom = 20.0
+
+[node name="MainBodyPanel" type="Panel" parent="."]
+margin_top = 20.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+
+[node name="DBNameContainer" type="Container" parent="MainBodyPanel"]
+margin_left = 912.0
+margin_top = 5.0
+margin_right = 912.0
+margin_bottom = 5.0
+
+[node name="DBNameLabel" type="Label" parent="MainBodyPanel/DBNameContainer"]
+margin_right = 96.0
+margin_bottom = 14.0
+text = "DBNAMELABEL"
+align = 1
+
+[node name="DebugLabel" type="Label" parent="MainBodyPanel/DBNameContainer"]
+margin_left = -907.0
+margin_right = -846.0
+margin_bottom = 14.0
+text = "Welcome"
+
+[node name="MainColumnContainer" type="HBoxContainer" parent="MainBodyPanel"]
+margin_left = 5.0
+margin_top = 40.0
+margin_right = 1915.0
+margin_bottom = 1050.0
+
+[node name="FirstVBoxContainer" type="VBoxContainer" parent="MainBodyPanel/MainColumnContainer"]
+margin_right = 100.0
+margin_bottom = 1010.0
+
+[node name="Panel" type="Panel" parent="MainBodyPanel/MainColumnContainer/FirstVBoxContainer"]
+margin_right = 100.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+
+[node name="TextEdit" type="TextEdit" parent="MainBodyPanel/MainColumnContainer/FirstVBoxContainer/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="Panel2" type="Panel" parent="MainBodyPanel/MainColumnContainer/FirstVBoxContainer"]
+margin_top = 54.0
+margin_right = 100.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 100, 50 )
+
+[node name="SecondVBoxContainer2" type="VBoxContainer" parent="MainBodyPanel/MainColumnContainer"]
+margin_left = 104.0
+margin_right = 204.0
+margin_bottom = 1010.0
+
+[node name="Panel" type="Panel" parent="MainBodyPanel/MainColumnContainer/SecondVBoxContainer2"]
+margin_right = 100.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+
+[node name="Panel2" type="Panel" parent="MainBodyPanel/MainColumnContainer/SecondVBoxContainer2"]
+margin_top = 54.0
+margin_right = 100.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 100, 50 )
+
+[node name="RowButtonVContainer" type="VBoxContainer" parent="MainBodyPanel/MainColumnContainer"]
+margin_left = 208.0
+margin_right = 228.0
+margin_bottom = 1010.0
+
+[node name="BtnAddRow" type="Button" parent="MainBodyPanel/MainColumnContainer/RowButtonVContainer"]
+margin_right = 20.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 20, 20 )
+text = "+"
+
+[node name="BtnRemoveRow" type="Button" parent="MainBodyPanel/MainColumnContainer/RowButtonVContainer"]
+margin_top = 24.0
+margin_right = 20.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 20, 20 )
+text = "-"
