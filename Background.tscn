@@ -57,10 +57,14 @@ margin_right = 100.0
 margin_bottom = 104.0
 rect_min_size = Vector2( 100, 50 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MainBodyPanel/MainColumnContainer/FirstVBoxContainer"]
+[node name="Panel3" parent="MainBodyPanel/MainColumnContainer/FirstVBoxContainer" instance=ExtResource( 2 )]
 margin_top = 108.0
+margin_bottom = 148.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainBodyPanel/MainColumnContainer/FirstVBoxContainer"]
+margin_top = 152.0
 margin_right = 100.0
-margin_bottom = 128.0
+margin_bottom = 172.0
 
 [node name="BtnAddRow" type="Button" parent="MainBodyPanel/MainColumnContainer/FirstVBoxContainer/HBoxContainer"]
 margin_right = 20.0
@@ -90,11 +94,6 @@ margin_top = 54.0
 margin_right = 100.0
 margin_bottom = 104.0
 rect_min_size = Vector2( 100, 50 )
-
-[node name="Cell" parent="MainBodyPanel/MainColumnContainer/SecondVBoxContainer" instance=ExtResource( 2 )]
-margin_top = 108.0
-margin_right = 100.0
-margin_bottom = 148.0
 
 [node name="ColButtonVContainer" parent="MainBodyPanel/MainColumnContainer" instance=ExtResource( 3 )]
 margin_left = 208.0

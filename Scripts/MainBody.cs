@@ -32,8 +32,8 @@ public class MainBody : Node
         int ColCellListSize = ColumnList[0].GetChildren().Count;
 
         for (int i = 0; i < ColCellListSize; i++){
-            
-            CellType Cell = new CellType();
+
+            CellType Cell = (CellType) cellPS.Instance();
             Cell.RectSize = new Vector2(Column.RectSize.x,Column.RectSize.y);
             
             Column.AddChild(Cell);
