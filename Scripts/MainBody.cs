@@ -29,7 +29,9 @@ public class MainBody : Node
 
         Column.Name = "Column" + ColumnList.Count;
 
-        int ColCellListSize = ColumnList[0].GetChildren().Count;
+        ColumnList.Add(Column);
+
+        int ColCellListSize = MainColumnContainer.GetChild(0).GetChildren().Count - 1;
 
         for (int i = 0; i < ColCellListSize; i++){
 
@@ -37,9 +39,13 @@ public class MainBody : Node
             Cell.RectSize = new Vector2(Column.RectSize.x,Column.RectSize.y);
             
             Column.AddChild(Cell);
+            Column.addCell(Cell);
 
         }
         
+        GD.Print(MainColumnContainer.GetChildren());
+        GD.Print(ColumnList.Count);
+
         MainColumnContainer.AddChild(Column);
         MainColumnContainer.MoveChild(ColButtonVContainer, ColumnList.Count);
         
@@ -47,11 +53,18 @@ public class MainBody : Node
 
     private void removeGeneralCol(){
 
-        int size = ColumnList.Count;
+        int size = MainColumnContainer.GetChildren().Count;
+
+        ColumnType targetColumn = (ColumnType)MainColumnContainer.GetChild(size-2);
+
         if (size >= 2){
-            debugLabelInputer("Removed column" + MainColumnContainer.GetChild(size-2).Name.ToString());
+
+            
+            debugLabelInputer("Removed column" + targetColumn.Name.ToString());
+
+            ColumnList.Remove(targetColumn);
+            MainColumnContainer.GetChild(size-2).QueueFree();
         }
-        MainColumnContainer.GetChild(size-2).QueueFree();
 
     }
 
