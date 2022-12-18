@@ -6,6 +6,8 @@ public class CellType : Panel
     
     private TextEdit textEdit;
     private MainBody MainBodyPanel;
+    
+    private ColumnType Parent;
 
     private void updateCellValue(){
         updateDebugLabel();
@@ -26,6 +28,9 @@ public class CellType : Panel
     }
     public override void _Ready(){
 
+        Parent = (ColumnType) this.GetParent();
+        Parent.addCell(this);
+
         MainBodyPanel = GetNode<MainBody>("/root/Background/MainBodyPanel");
         textEdit = GetNode<TextEdit>("TextEdit");
 
@@ -33,6 +38,8 @@ public class CellType : Panel
         textEdit.RectSize = new Vector2(this.RectSize.x-5, this.RectSize.y-5);
 
         textEdit.Connect("focus_exited", this, "updateCellValue");
+
+
 
     }
 

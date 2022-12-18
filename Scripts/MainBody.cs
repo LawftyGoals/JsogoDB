@@ -39,7 +39,7 @@ public class MainBody : Node
             Cell.RectSize = new Vector2(Column.RectSize.x,Column.RectSize.y);
             
             Column.AddChild(Cell);
-            Column.addCell(Cell);
+            //Column.addCell(Cell);
 
         }
         
@@ -77,16 +77,24 @@ public class MainBody : Node
         int columnIndex = 1;
 
         foreach (ColumnType Column in ColumnList){
-            CellType cell = (CellType) cellPS.Instance();
-            cell.RectSize = new Vector2(Column.RectSize.x, 40);
 
-            cell.Name = "Cell" + columnIndex.ToString();
-            columnIndex++;
+            if (Column != this.ColButtonVContainer) {
+                CellType cell = (CellType) cellPS.Instance();
+                cell.RectSize = new Vector2(Column.RectSize.x, 40);
+
+                cell.Name = "Cell" + columnIndex.ToString();
+                columnIndex++;
+                
+                Column.AddChild(cell);
+                //Column.addCell(cell);
+            }
             
-            Column.AddChild(cell);
-            Column.addCell(cell);
 
-            Column.MoveChild(RowButtonHContainer, Column.CellListSize());
+            if (Column == this.FirstVBoxContainer){
+                Column.MoveChild(RowButtonHContainer, Column.CellListSize());
+            }
+
+            
         }
 
 
@@ -140,8 +148,8 @@ public class MainBody : Node
         
         BtnAddCol = GetNode<Button>("MainColumnContainer/ColButtonVContainer/BtnAddCol");
         BtnRemoveCol = GetNode<Button>("MainColumnContainer/ColButtonVContainer/BtnRemoveCol");
-        BtnAddRow = GetNode<Button>("MainColumnContainer/FirstVBoxContainer/HBoxContainer/BtnAddRow");
-        BtnRemoveRow = GetNode<Button>("MainColumnContainer/FirstVBoxContainer/HBoxContainer/BtnRemoveRow");
+        BtnAddRow = GetNode<Button>("MainColumnContainer/FirstVBoxContainer/RowButtonHContainer/BtnAddRow");
+        BtnRemoveRow = GetNode<Button>("MainColumnContainer/FirstVBoxContainer/RowButtonHContainer/BtnRemoveRow");
 
         BtnAddCol.Connect("pressed", this, nameof(addGeneralCol));
         BtnRemoveCol.Connect("pressed", this, nameof(removeGeneralCol));

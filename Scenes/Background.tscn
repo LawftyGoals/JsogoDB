@@ -55,18 +55,18 @@ margin_top = 44.0
 margin_right = 80.0
 margin_bottom = 84.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MainBodyPanel/MainColumnContainer/FirstVBoxContainer"]
+[node name="RowButtonHContainer" type="HBoxContainer" parent="MainBodyPanel/MainColumnContainer/FirstVBoxContainer"]
 margin_top = 88.0
 margin_right = 80.0
 margin_bottom = 108.0
 
-[node name="BtnAddRow" type="Button" parent="MainBodyPanel/MainColumnContainer/FirstVBoxContainer/HBoxContainer"]
+[node name="BtnAddRow" type="Button" parent="MainBodyPanel/MainColumnContainer/FirstVBoxContainer/RowButtonHContainer"]
 margin_right = 20.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 20, 20 )
 text = "+"
 
-[node name="BtnRemoveRow" type="Button" parent="MainBodyPanel/MainColumnContainer/FirstVBoxContainer/HBoxContainer"]
+[node name="BtnRemoveRow" type="Button" parent="MainBodyPanel/MainColumnContainer/FirstVBoxContainer/RowButtonHContainer"]
 margin_left = 24.0
 margin_right = 44.0
 margin_bottom = 20.0
