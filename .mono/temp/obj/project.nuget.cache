@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "MRnuA9tGtjziVxSWOVnY7551yDTzVZ90v+1pMu9sAJotL11UXw+8VgaGUHasTQ9Op49tsFXG8wTTdBpsxDFiYQ==",
+  "success": true,
+  "projectFilePath": "/home/lawftyg/Documents/Godot Projects/JsogoDB/JsogoDB.csproj",
+  "expectedPackageFiles": [
+    "/home/lawftyg/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.0/microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
+    "/home/lawftyg/.nuget/packages/microsoft.netframework.referenceassemblies.net472/1.0.0/microsoft.netframework.referenceassemblies.net472.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

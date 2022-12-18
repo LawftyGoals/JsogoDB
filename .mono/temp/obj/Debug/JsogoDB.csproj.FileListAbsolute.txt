@@ -1,0 +1,8 @@
+/home/lawftyg/Documents/Godot Projects/JsogoDB/.mono/temp/obj/Debug/JsogoDB.csprojAssemblyReference.cache
+/home/lawftyg/Documents/Godot Projects/JsogoDB/.mono/temp/obj/Debug/JsogoDB.AssemblyInfoInputs.cache
+/home/lawftyg/Documents/Godot Projects/JsogoDB/.mono/temp/obj/Debug/JsogoDB.AssemblyInfo.cs
+/home/lawftyg/Documents/Godot Projects/JsogoDB/.mono/temp/obj/Debug/JsogoDB.csproj.CoreCompileInputs.cache
+/home/lawftyg/Documents/Godot Projects/JsogoDB/.mono/temp/bin/Debug/JsogoDB.dll
+/home/lawftyg/Documents/Godot Projects/JsogoDB/.mono/temp/bin/Debug/JsogoDB.pdb
+/home/lawftyg/Documents/Godot Projects/JsogoDB/.mono/temp/obj/Debug/JsogoDB.dll
+/home/lawftyg/Documents/Godot Projects/JsogoDB/.mono/temp/obj/Debug/JsogoDB.pdb

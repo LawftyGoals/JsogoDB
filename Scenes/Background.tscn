@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/MainBody.cs" type="Script" id=1]
-[ext_resource path="res://Cell.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Cell.tscn" type="PackedScene" id=2]
 [ext_resource path="res://VBCol.tscn" type="PackedScene" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -44,27 +44,21 @@ margin_right = 1915.0
 margin_bottom = 1050.0
 
 [node name="FirstVBoxContainer" parent="MainBodyPanel/MainColumnContainer" instance=ExtResource( 3 )]
+margin_right = 80.0
 margin_bottom = 1010.0
 
-[node name="Panel" type="Panel" parent="MainBodyPanel/MainColumnContainer/FirstVBoxContainer"]
-margin_right = 100.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 100, 50 )
+[node name="RootCell11" parent="MainBodyPanel/MainColumnContainer/FirstVBoxContainer" instance=ExtResource( 2 )]
+margin_right = 80.0
 
-[node name="Panel2" type="Panel" parent="MainBodyPanel/MainColumnContainer/FirstVBoxContainer"]
-margin_top = 54.0
-margin_right = 100.0
-margin_bottom = 104.0
-rect_min_size = Vector2( 100, 50 )
-
-[node name="Panel3" parent="MainBodyPanel/MainColumnContainer/FirstVBoxContainer" instance=ExtResource( 2 )]
-margin_top = 108.0
-margin_bottom = 148.0
+[node name="RootCell12" parent="MainBodyPanel/MainColumnContainer/FirstVBoxContainer" instance=ExtResource( 2 )]
+margin_top = 44.0
+margin_right = 80.0
+margin_bottom = 84.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainBodyPanel/MainColumnContainer/FirstVBoxContainer"]
-margin_top = 152.0
-margin_right = 100.0
-margin_bottom = 172.0
+margin_top = 88.0
+margin_right = 80.0
+margin_bottom = 108.0
 
 [node name="BtnAddRow" type="Button" parent="MainBodyPanel/MainColumnContainer/FirstVBoxContainer/HBoxContainer"]
 margin_right = 20.0
@@ -80,24 +74,21 @@ rect_min_size = Vector2( 20, 20 )
 text = "-"
 
 [node name="SecondVBoxContainer" parent="MainBodyPanel/MainColumnContainer" instance=ExtResource( 3 )]
-margin_left = 104.0
-margin_right = 204.0
+margin_left = 84.0
+margin_right = 164.0
 margin_bottom = 1010.0
 
-[node name="Panel" type="Panel" parent="MainBodyPanel/MainColumnContainer/SecondVBoxContainer"]
-margin_right = 100.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 100, 50 )
+[node name="RootCell21" parent="MainBodyPanel/MainColumnContainer/SecondVBoxContainer" instance=ExtResource( 2 )]
+margin_right = 80.0
 
-[node name="Panel2" type="Panel" parent="MainBodyPanel/MainColumnContainer/SecondVBoxContainer"]
-margin_top = 54.0
-margin_right = 100.0
-margin_bottom = 104.0
-rect_min_size = Vector2( 100, 50 )
+[node name="RootCell22" parent="MainBodyPanel/MainColumnContainer/SecondVBoxContainer" instance=ExtResource( 2 )]
+margin_top = 44.0
+margin_right = 80.0
+margin_bottom = 84.0
 
 [node name="ColButtonVContainer" parent="MainBodyPanel/MainColumnContainer" instance=ExtResource( 3 )]
-margin_left = 208.0
-margin_right = 228.0
+margin_left = 168.0
+margin_right = 188.0
 margin_bottom = 1010.0
 rect_min_size = Vector2( 20, 20 )
 

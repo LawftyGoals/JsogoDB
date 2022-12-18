@@ -11,12 +11,12 @@ config_version=4
 [application]
 
 config/name="JsogoDB"
-run/main_scene="res://Background.tscn"
+run/main_scene="res://Scenes/Background.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-MainBodyPanel="*res://Background.tscn"
+MainBodyPanel="*res://Scenes/Background.tscn"
 
 [display]
 

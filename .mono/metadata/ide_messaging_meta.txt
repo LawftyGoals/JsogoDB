@@ -1,0 +1,2 @@
+﻿37343
+/opt/Godot3.4.3mono/Godot_v3.4.3-stable_mono_x11.64

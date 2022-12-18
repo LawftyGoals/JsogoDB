@@ -7,7 +7,7 @@ public class MainBody : Node
 
     private Label debugLabel, dbNameLabel;
     private Container DBNameContainer;
-    private HBoxContainer MainColumnContainer;
+    private HBoxContainer MainColumnContainer, RowButtonHContainer;
 
     private ColumnType ColButtonVContainer, FirstVBoxContainer, SecondVBoxContainer;
 
@@ -15,7 +15,7 @@ public class MainBody : Node
 
     private List<ColumnType> ColumnList;
 
-    private PackedScene cellPS = GD.Load<PackedScene>("res://Cell.tscn");
+    private PackedScene cellPS = GD.Load<PackedScene>("res://Scenes/Cell.tscn");
 
 
     public void debugLabelInputer(String s){
@@ -54,10 +54,11 @@ public class MainBody : Node
     private void removeGeneralCol(){
 
         int size = MainColumnContainer.GetChildren().Count;
+        GD.Print(size);
 
         ColumnType targetColumn = (ColumnType)MainColumnContainer.GetChild(size-2);
 
-        if (size >= 2){
+        if (size >= 4){
 
             
             debugLabelInputer("Removed column" + targetColumn.Name.ToString());
@@ -69,21 +70,26 @@ public class MainBody : Node
     }
 
     private void addGeneralRow(){
+        
+        
         debugLabelInputer("Added New Row");
 
-        VBoxContainer vBox = new VBoxContainer();
-        
-        Godot.Collections.Array listSizer = MainColumnContainer.GetChildren();
+        int columnIndex = 1;
 
-        vBox.Name = "vBox" + listSizer.Count;
-        
-        Panel pant = new Panel();
-        pant.RectMinSize = new Vector2(20,20);
+        foreach (ColumnType Column in ColumnList){
+            CellType cell = (CellType) cellPS.Instance();
+            cell.RectSize = new Vector2(Column.RectSize.x, 40);
 
-        vBox.AddChild(pant);
+            cell.Name = "Cell" + columnIndex.ToString();
+            columnIndex++;
+            
+            Column.AddChild(cell);
+            Column.addCell(cell);
 
-        MainColumnContainer.AddChild(vBox);
-        MainColumnContainer.MoveChild(ColButtonVContainer, listSizer.Count);
+            Column.MoveChild(RowButtonHContainer, Column.CellListSize());
+        }
+
+
         
     }
 
@@ -127,6 +133,10 @@ public class MainBody : Node
         ColumnList.Add(FirstVBoxContainer);
         SecondVBoxContainer = GetNode<ColumnType>("MainColumnContainer/SecondVBoxContainer");
         ColumnList.Add(SecondVBoxContainer);
+
+        RowButtonHContainer = GetNode<HBoxContainer>("MainColumnContainer/FirstVBoxContainer/RowButtonHContainer");
+
+
         
         BtnAddCol = GetNode<Button>("MainColumnContainer/ColButtonVContainer/BtnAddCol");
         BtnRemoveCol = GetNode<Button>("MainColumnContainer/ColButtonVContainer/BtnRemoveCol");

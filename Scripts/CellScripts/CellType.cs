@@ -30,6 +30,7 @@ public class CellType : Panel
         textEdit = GetNode<TextEdit>("TextEdit");
 
         textEdit.RectMinSize = new Vector2(this.RectSize.x-5, this.RectSize.y-5);
+        textEdit.RectSize = new Vector2(this.RectSize.x-5, this.RectSize.y-5);
 
         textEdit.Connect("focus_exited", this, "updateCellValue");
 
